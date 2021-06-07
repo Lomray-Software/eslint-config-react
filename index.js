@@ -10,7 +10,7 @@ module.exports = {
 		'react/no-redundant-should-component-update': ['warn'],
 		'react/button-has-type': ['error'],
 		'react/react-in-jsx-scope': ['error'],
-		'react/jsx-boolean-value': ['error', 'always', { never: ['personal'] }],
+		'react/jsx-boolean-value': ['error', 'never', { always: ['personal'] }],
 		'react/destructuring-assignment': ['error'],
 		'react/jsx-closing-tag-location': ['error'],
 		'react/jsx-curly-newline': ['error'],
