@@ -27,8 +27,8 @@
     },
     "homepage": "https://github.com/Lomray-Software/eslint-config-react",
     "dependencies": {
-        "@lomray/eslint-config": "^1.0.1",
-        "eslint-plugin-react": "^7.24.0",
-        "eslint-plugin-react-hooks": "^4.2.0"
+        "@lomray/eslint-config": "^1.2.1",
+        "eslint-plugin-react": "^7.30.1",
+        "eslint-plugin-react-hooks": "^4.6.0"
     }
 }
