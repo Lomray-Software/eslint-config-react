@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
 
       - name: Check if package.json version has been updated
         id: check
-        uses: EndBug/version-check@v1
+        uses: EndBug/version-check@v2
         with:
           diff-search: true
           file-name: package.json
@@ -23,9 +23,9 @@ jobs:
 
       - name: Use Node.js
         if: steps.check.outputs.changed == 'true'
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.16
+          node-version: 18.13.0
           registry-url: https://registry.npmjs.org/
 
       - name: Create Release
