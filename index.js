@@ -2,6 +2,9 @@ module.exports = {
 	extends: ['@lomray/eslint-config'],
 	plugins: ['react', 'react-hooks'],
 	rules: {
+		'react/react-in-jsx-scope': 'off',
+		'react-hooks/exhaustive-deps': 'off',
+		'react-hooks/rules-of-hooks': 'off',
 		'react/no-deprecated': ['warn'],
 		'react/no-did-mount-set-state': ['warn'],
 		'react/no-did-update-set-state': ['warn'],
@@ -9,7 +12,6 @@ module.exports = {
 		'react/no-unused-state': ['warn'],
 		'react/no-redundant-should-component-update': ['warn'],
 		'react/button-has-type': ['error'],
-		'react/react-in-jsx-scope': ['error'],
 		'react/jsx-boolean-value': ['error', 'never', { always: ['personal'] }],
 		'react/destructuring-assignment': ['error'],
 		'react/jsx-closing-tag-location': ['error'],
@@ -24,7 +26,5 @@ module.exports = {
 		'react/no-multi-comp': ['error', { ignoreStateless: true }],
 		'react/no-access-state-in-setstate': ['error'],
 		'react/no-array-index-key': ['error'],
-		'react-hooks/rules-of-hooks': ['error'],
-		'react-hooks/exhaustive-deps': ['error'],
 	},
 };
