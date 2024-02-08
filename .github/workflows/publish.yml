@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
 
@@ -23,9 +23,9 @@ jobs:
 
       - name: Use Node.js
         if: steps.check.outputs.changed == 'true'
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18.13.0
+          node-version: 18.19.0
           registry-url: https://registry.npmjs.org/
 
       - name: Create Release
