@@ -1,13 +1,11 @@
 import baseConfig from '@lomray/eslint-config';
 import react from './configs/react.js';
-import reactHooks from './configs/react-hooks.js';
 import jsx from './configs/jsx-a11y.js';
 import base from './configs/base.js';
 
 const reactConfig = [
 	base,
 	react,
-	reactHooks,
 	jsx,
 ];
 
