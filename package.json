@@ -1,6 +1,6 @@
 {
   "name": "@lomray/eslint-config-react",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "This package provides Lomray eslint config as an extensible shared config for React.",
   "main": "index.js",
   "type": "module",
