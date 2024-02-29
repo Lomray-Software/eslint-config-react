@@ -4,6 +4,11 @@ export default {
     plugins: {
         react: pluginReact,
     },
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     rules: {
         'react/no-deprecated': ['warn'],
         'react/no-did-mount-set-state': ['warn'],
