@@ -15,6 +15,10 @@ This package provides Lomray eslint config as an extensible shared config for Re
 import lomrayConfig from '@lomray/eslint-config-react';
 
 export default [
-    ...lomrayConfig.recommended,  
+    ...lomrayConfig.recommended, // without files and ignores
+    // or
+    ...lomrayConfig.config(), // with predefined files and ignores
+    // or
+    ...lomrayConfig.config({ here: 'your config to exend' }),
 ];
 ```

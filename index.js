@@ -9,10 +9,14 @@ const reactConfig = [
 	jsx,
 ];
 
+const recommended = [
+	...baseConfig.recommended,
+	...reactConfig,
+]
+
 export default {
-	recommended: [
-		...baseConfig.recommended,
-		...reactConfig,
-	],
+	recommended,
 	react: reactConfig,
+	config: (extendConfig = baseConfig.filesIgnores) =>
+		recommended.map((original) => ({ ...original, ...extendConfig })),
 };
