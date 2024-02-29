@@ -2,7 +2,7 @@ import pluginReact from 'eslint-plugin-react';
 
 export default {
     plugins: {
-        folders: pluginReact,
+        react: pluginReact,
     },
     rules: {
         'react/no-deprecated': ['warn'],
