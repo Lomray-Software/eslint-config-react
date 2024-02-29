@@ -1,7 +1,7 @@
 import baseConfig from '@lomray/eslint-config';
-import react from './configs/react';
-import reactHooks from './configs/react-hooks';
-import jsx from './configs/jsx-a11y';
+import react from './configs/react.js';
+import reactHooks from './configs/react-hooks.js';
+import jsx from './configs/jsx-a11y.js';
 
 const current = [
 	react,
