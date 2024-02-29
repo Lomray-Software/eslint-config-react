@@ -3,7 +3,7 @@ import react from './configs/react.js';
 import reactHooks from './configs/react-hooks.js';
 import jsx from './configs/jsx-a11y.js';
 
-const current = [
+const reactConfig = [
 	react,
 	reactHooks,
 	jsx,
@@ -11,8 +11,8 @@ const current = [
 
 export default {
 	recommended: [
-		baseConfig,
-		...current,
+		...baseConfig.recommended,
+		...reactConfig,
 	],
-	react: current,
+	react: reactConfig,
 };
