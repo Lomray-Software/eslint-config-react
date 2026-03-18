@@ -4,14 +4,19 @@ on:
   push:
     branches: [ master ]
 
+env:
+  NODE_VERSION: 22.21.0
+  ENABLE_CACHE: yes
+  NPM_VERSION: 11.5.2
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - uses: actions/checkout@v4
-
-      - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+      - uses: actions/checkout@v6
 
       - name: Check if package.json version has been updated
         id: check
@@ -21,12 +26,13 @@ jobs:
           file-name: package.json
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Use Node.js
-        if: steps.check.outputs.changed == 'true'
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18.19.0
-          registry-url: https://registry.npmjs.org/
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: 'https://registry.npmjs.org'
+          cache: ${{ env.ENABLE_CACHE == 'yes' && 'npm' || '' }}
+
+      - run: npm i -g npm@${{ env.NPM_VERSION }}
 
       - name: Create Release
         if: steps.check.outputs.changed == 'true'
