@@ -1,35 +1,39 @@
-import pluginReact from 'eslint-plugin-react';
+import pluginReact from '@eslint-react/eslint-plugin';
+import stylistic from '@stylistic/eslint-plugin';
+import style from '../rules/index.js';
 
 export default {
     plugins: {
-        react: pluginReact,
-    },
-    settings: {
-        react: {
-            version: 'detect',
-        },
+        '@eslint-react': pluginReact,
+        '@stylistic': stylistic,
+        lomray: style,
     },
     rules: {
-        'react/no-deprecated': ['warn'],
-        'react/no-did-mount-set-state': ['warn'],
-        'react/no-did-update-set-state': ['warn'],
-        'react/no-unused-prop-types': ['warn'],
-        'react/no-unused-state': ['warn'],
-        'react/no-redundant-should-component-update': ['warn'],
-        'react/button-has-type': ['error'],
-        'react/jsx-boolean-value': ['error', 'never', { always: ['personal'] }],
-        'react/destructuring-assignment': ['error'],
-        'react/jsx-closing-tag-location': ['error'],
-        'react/jsx-curly-newline': ['error'],
-        'react/jsx-fragments': ['error'],
-        'react/jsx-handler-names': ['error'],
-        'react/jsx-key': ['error'],
-        'react/jsx-no-constructed-context-values': ['error'],
-        'react/no-direct-mutation-state': ['error'],
-        'react/jsx-no-useless-fragment': ['error'],
-        'react/jsx-uses-react': ['error'],
-        'react/no-multi-comp': ['error', { ignoreStateless: true }],
-        'react/no-access-state-in-setstate': ['error'],
-        'react/no-array-index-key': ['error'],
+        '@eslint-react/no-component-will-mount': 'warn',
+        '@eslint-react/no-component-will-receive-props': 'warn',
+        '@eslint-react/no-component-will-update': 'warn',
+        '@eslint-react/dom-no-find-dom-node': 'warn',
+        '@eslint-react/dom-no-hydrate': 'warn',
+        '@eslint-react/dom-no-render': 'warn',
+        '@eslint-react/no-set-state-in-component-did-mount': 'warn',
+        '@eslint-react/no-set-state-in-component-did-update': 'warn',
+        '@eslint-react/no-unused-props': 'warn',
+        '@eslint-react/no-unused-state': 'warn',
+        '@eslint-react/dom-no-missing-button-type': 'error',
+        '@eslint-react/no-missing-key': 'error',
+        '@eslint-react/no-duplicate-key': 'error',
+        '@eslint-react/no-unstable-context-value': 'error',
+        '@eslint-react/no-direct-mutation-state': 'error',
+        '@eslint-react/jsx-no-useless-fragment': 'error',
+        '@eslint-react/no-access-state-in-setstate': 'error',
+        '@eslint-react/no-array-index-key': 'error',
+        '@stylistic/jsx-closing-tag-location': 'error',
+        '@stylistic/jsx-curly-newline': 'error',
+        'lomray/jsx-boolean-value': 'error',
+        'lomray/jsx-fragments': 'error',
+        'lomray/jsx-handler-names': 'error',
+        'lomray/destructuring-assignment': 'error',
+        'lomray/no-multi-comp': 'error',
+        'lomray/no-redundant-should-component-update': 'warn',
     },
-}
+};
